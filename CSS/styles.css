@@ -249,6 +249,46 @@ border-radius:var(--radius);
 text-align:center;
 }
 
+.contact-icons{
+display:flex;
+justify-content:center;
+gap:25px;
+margin-top:20px;
+}
+
+.contact-icons a{
+width:55px;
+height:55px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+background:var(--card);
+border:1px solid var(--line);
+color:white;
+font-size:1.3rem;
+transition:.3s;
+}
+
+.contact-icons a:hover{
+transform:translateY(-5px);
+background:linear-gradient(90deg,var(--accent),var(--accent2));
+box-shadow:var(--shadow);
+}
+
+.contact-icons a::after{
+content:attr(data-name);
+position:absolute;
+bottom:-30px;
+font-size:.7rem;
+opacity:0;
+transition:.3s;
+}
+
+.contact-icons a:hover::after{
+opacity:1;
+}
+
 /* POPUP */
 .popup{
 position:fixed;
