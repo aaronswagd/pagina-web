@@ -1,5 +1,6 @@
 :root{
---bg:#0a0a0a;
+--bg:#050505;
+--bg2:#111;
 --card:#141414;
 --text:#ffffff;
 --soft:#a1a1aa;
@@ -10,6 +11,7 @@
 --shadow:0 20px 40px rgba(0,0,0,.35);
 }
 
+/* RESET */
 *{
 margin:0;
 padding:0;
@@ -17,13 +19,16 @@ box-sizing:border-box;
 scroll-behavior:smooth;
 }
 
+/* BODY */
 body{
 font-family:'Inter',sans-serif;
-background:linear-gradient(135deg,#050505,#111,#050505);
+background:linear-gradient(135deg,var(--bg),var(--bg2),var(--bg));
 color:var(--text);
 overflow-x:hidden;
+transition: background .4s, color .4s;
 }
 
+/* FONDO DECORATIVO */
 body::before{
 content:"";
 position:fixed;
@@ -64,7 +69,7 @@ list-style:none;
 }
 
 nav a{
-color:white;
+color:var(--text);
 text-decoration:none;
 font-size:.95rem;
 transition:.3s;
@@ -77,12 +82,8 @@ color:var(--accent2);
 /* HERO */
 
 .idea-text{
-font-family: "Playfair", serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: italic;
-  font-variation-settings:
-    "wdth" 80;
+font-family: "Playfair Display", serif;
+font-style: italic;
 }
 
 .hero{
@@ -145,7 +146,7 @@ color:white;
 
 .secondary{
 border:1px solid var(--line);
-color:white;
+color:var(--text);
 }
 
 .btn:hover{
@@ -161,7 +162,7 @@ color:var(--soft);
 font-size:.9rem;
 }
 
-/* CARDS */
+/* CARD HERO */
 .hero-card{
 background:rgba(255,255,255,.03);
 border:1px solid var(--line);
@@ -175,7 +176,7 @@ width:100%;
 border-radius:18px;
 }
 
-/* GRID */
+/* SECCIONES */
 section{
 padding:90px 6%;
 max-width:1500px;
@@ -188,6 +189,7 @@ margin-bottom:35px;
 font-weight:800;
 }
 
+/* SERVICIOS */
 .grid{
 display:grid;
 grid-template-columns:repeat(4,1fr);
@@ -241,7 +243,7 @@ font-weight:700;
 font-size:1rem;
 }
 
-/* CONTACT */
+/* CONTACTO */
 .contact-box{
 background:var(--card);
 padding:40px;
@@ -268,7 +270,7 @@ justify-content:center;
 border-radius:50%;
 background:rgba(255,255,255,.03);
 border:1px solid var(--line);
-color:white;
+color:var(--text);
 font-size:1.3rem;
 transition:.3s;
 }
@@ -302,7 +304,6 @@ padding:40px 6%;
 color:var(--soft);
 border-top:1px solid var(--line);
 margin-top:50px;
-
 display:flex;
 justify-content:center;
 align-items:center;
@@ -318,15 +319,26 @@ gap:10px;
 .portfolio{grid-template-columns:1fr;}
 }
 
-/* MODO CLARO AUTOMÁTICO */
-@media (prefers-color-scheme: light) {
+/*MODO CLARO */
+@media (prefers-color-scheme: light){
 :root{
 --bg:#f5f5f5;
+--bg2:#e5e5e5;
 --card:#ffffff;
 --text:#0a0a0a;
 --soft:#52525b;
 --line:rgba(0,0,0,.08);
 --accent:#7c3aed;
 --accent2:#22d3ee;
+}
+
+/* suavizar fondo decorativo */
+body::before{
+opacity:0.25;
+}
+
+/* overlay menos agresivo */
+.overlay{
+background:linear-gradient(to top,rgba(0,0,0,.5),transparent);
 }
 }
