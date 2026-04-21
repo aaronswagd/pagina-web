@@ -262,6 +262,21 @@ max-width:260px;
 z-index:999;
 }
 
+/* FOOTER */
+footer{
+padding:40px 6%;
+color:var(--soft);
+border-top:1px solid var(--line);
+margin-top:50px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+flex-direction:column;
+gap:10px;
+}
+
 /* RESPONSIVE */
 @media(max-width:900px){
 .hero-wrap{grid-template-columns:1fr;}
