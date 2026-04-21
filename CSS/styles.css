@@ -75,6 +75,13 @@ color:var(--accent2);
 }
 
 /* HERO */
+
+.idea-text{
+font-family: 'Caveat', cursive;
+font-size: 1.2em;
+letter-spacing: 1px;
+}
+
 .hero{
 min-height:100vh;
 display:flex;
