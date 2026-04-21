@@ -343,8 +343,4 @@ background:linear-gradient(to top,rgba(0,0,0,.5),transparent);
 }
 }
 
-@media (prefers-color-scheme: light){
-body{
-background:red !important;
-}
-}
+
