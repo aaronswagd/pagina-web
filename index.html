@@ -1,501 +1,458 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio de Jeon | Diseñador Gráfico</title>
-    <style>
-        :root {
-            --bg-color: #ffffff;
-            --text-color: #333333;
-            --accent-color: #4a6fa5;
-            --card-bg: #f8f8f8;
-            --transition: all 0.3s ease;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tu Nombre | Diseñador Gráfico Premium</title>
 
-        .dark-mode {
-            --bg-color: #121212;
-            --text-color: #f0f0f0;
-            --accent-color: #6d9be8;
-            --card-bg: #1e1e1e;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-        }
+<style>
+:root{
+--bg:#0a0a0a;
+--card:#141414;
+--text:#ffffff;
+--soft:#a1a1aa;
+--line:rgba(255,255,255,.08);
+--accent:#7c3aed;
+--accent2:#22d3ee;
+--radius:22px;
+--shadow:0 20px 40px rgba(0,0,0,.35);
+}
 
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            transition: var(--transition);
-            line-height: 1.6;
-        }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
 
-        header {
-            padding: 2rem 1rem;
-            text-align: center;
-            background: linear-gradient(135deg, var(--accent-color), #3a4f7a);
-            color: white;
-        }
+body{
+font-family:'Inter',sans-serif;
+background:linear-gradient(135deg,#050505,#111,#050505);
+color:var(--text);
+overflow-x:hidden;
+}
 
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
+body::before{
+content:"";
+position:fixed;
+inset:0;
+background:
+radial-gradient(circle at 10% 20%,rgba(124,58,237,.18),transparent 30%),
+radial-gradient(circle at 80% 30%,rgba(34,211,238,.15),transparent 30%),
+radial-gradient(circle at 50% 80%,rgba(255,255,255,.04),transparent 35%);
+z-index:-1;
+}
 
-        .cta-button {
-            display: inline-block;
-            padding: 0.8rem 1.5rem;
-            background-color: white;
-            color: var(--accent-color);
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            margin-top: 1rem;
-            transition: var(--transition);
-        }
+/* NAV */
+nav{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:18px 6%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+backdrop-filter:blur(18px);
+background:rgba(10,10,10,.45);
+border-bottom:1px solid var(--line);
+z-index:999;
+}
 
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
+.logo{
+font-size:1.2rem;
+font-weight:900;
+letter-spacing:2px;
+}
 
-        nav {
-            display: flex;
-            justify-content: center;
-            padding: 1rem;
-            background-color: var(--card-bg);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+nav ul{
+display:flex;
+gap:28px;
+list-style:none;
+}
 
-        nav a {
-            margin: 0 1rem;
-            text-decoration: none;
-            color: var(--text-color);
-            font-weight: 500;
-            transition: var(--transition);
-        }
+nav a{
+color:white;
+text-decoration:none;
+font-size:.95rem;
+transition:.3s;
+}
 
-        nav a:hover {
-            color: var(--accent-color);
-        }
+nav a:hover{
+color:var(--accent2);
+}
 
-        section {
-            padding: 3rem 1rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+/* HERO */
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:120px 6% 60px;
+}
 
-        .section-title {
-            text-align: center;
-            margin-bottom: 2rem;
-            color: var(--accent-color);
-        }
+.hero-wrap{
+display:grid;
+grid-template-columns:1.1fr .9fr;
+gap:60px;
+align-items:center;
+width:100%;
+max-width:1400px;
+}
 
-        /* Galería */
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
+.hero h1{
+font-size:clamp(3rem,7vw,7rem);
+line-height:1;
+font-weight:900;
+margin-bottom:20px;
+}
 
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: var(--transition);
-            aspect-ratio: 1/1;
-        }
+.gradient{
+background:linear-gradient(90deg,var(--accent),var(--accent2));
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
 
-        .gallery-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-        }
+.hero p{
+font-size:1.1rem;
+color:var(--soft);
+max-width:600px;
+line-height:1.8;
+}
 
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
+.buttons{
+margin-top:35px;
+display:flex;
+gap:18px;
+flex-wrap:wrap;
+}
 
-        .gallery-item:hover img {
-            transform: scale(1.05);
-        }
+.btn{
+padding:15px 28px;
+border-radius:50px;
+text-decoration:none;
+font-weight:700;
+transition:.3s;
+display:inline-block;
+}
 
-        /* Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-        }
+.primary{
+background:linear-gradient(90deg,var(--accent),var(--accent2));
+color:white;
+}
 
-        .modal-content {
-            max-width: 90%;
-            max-height: 90%;
-        }
+.secondary{
+border:1px solid var(--line);
+color:white;
+}
 
-        .modal-content img {
-            width: 100%;
-            height: auto;
-            max-height: 80vh;
-            object-fit: contain;
-        }
+.btn:hover{
+transform:translateY(-4px);
+box-shadow:var(--shadow);
+}
 
-        .close-modal {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            color: white;
-            font-size: 2rem;
-            cursor: pointer;
-        }
+.hero-card{
+background:rgba(255,255,255,.03);
+border:1px solid var(--line);
+padding:25px;
+border-radius:var(--radius);
+box-shadow:var(--shadow);
+}
 
-        /* Sobre mí */
-        .about-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            align-items: center;
-            justify-content: center;
-        }
+.hero-card img{
+width:100%;
+border-radius:18px;
+display:block;
+}
 
-        .profile-pic {
-            width: 250px;
-            height: 250px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid var(--accent-color);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
+/* GENERAL */
+section{
+padding:90px 6%;
+max-width:1500px;
+margin:auto;
+}
 
-        .about-text {
-            flex: 1;
-            min-width: 300px;
-        }
+.title{
+font-size:2.4rem;
+margin-bottom:35px;
+font-weight:800;
+}
 
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
+/* SERVICES */
+.grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:22px;
+}
 
-        .skill-tag {
-            background-color: var(--accent-color);
-            color: white;
-            padding: 0.3rem 0.8rem;
-            border-radius: 50px;
-            font-size: 0.9rem;
-        }
+.card{
+background:var(--card);
+padding:28px;
+border-radius:var(--radius);
+border:1px solid var(--line);
+transition:.35s;
+}
 
-        /* Contacto */
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-        }
+.card:hover{
+transform:translateY(-8px);
+border-color:rgba(124,58,237,.6);
+}
 
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
+.card h3{
+margin-bottom:12px;
+font-size:1.2rem;
+}
 
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
+.card p{
+color:var(--soft);
+line-height:1.7;
+}
 
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            background-color: var(--card-bg);
-            color: var(--text-color);
-            transition: var(--transition);
-        }
+/* PORTFOLIO */
+.portfolio{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:22px;
+}
 
-        .form-group textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
+.work{
+position:relative;
+overflow:hidden;
+border-radius:var(--radius);
+}
 
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--accent-color);
-            box-shadow: 0 0 0 2px rgba(74, 111, 165, 0.2);
-        }
+.work img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+transition:1s;
+}
 
-        .submit-btn {
-            background-color: var(--accent-color);
-            color: white;
-            border: none;
-            padding: 0.8rem 1.5rem;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: var(--transition);
-        }
+.work:hover img{
+transform:scale(1.08);
+}
 
-        .submit-btn:hover {
-            background-color: #3a5a8c;
-        }
+.overlay{
+position:absolute;
+inset:0;
+background:linear-gradient(to top,rgba(0,0,0,.7),transparent);
+display:flex;
+align-items:end;
+padding:22px;
+font-weight:700;
+}
 
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
+/* CONTACT */
+.contact-box{
+background:var(--card);
+padding:40px;
+border-radius:var(--radius);
+border:1px solid var(--line);
+text-align:center;
+}
 
-        .social-links a {
-            color: var(--text-color);
-            font-size: 1.5rem;
-            transition: var(--transition);
-        }
+.contact-box p{
+color:var(--soft);
+margin:10px 0;
+}
 
-        .social-links a:hover {
-            color: var(--accent-color);
-            transform: translateY(-3px);
-        }
+/* FOOTER */
+footer{
+padding:40px 6%;
+text-align:center;
+color:var(--soft);
+border-top:1px solid var(--line);
+margin-top:50px;
+}
 
-        /* Toggle dark mode */
-        .theme-toggle {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background-color: var(--accent-color);
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-            border: none;
-            z-index: 100;
-            transition: var(--transition);
-        }
+/* TABLET */
+@media(max-width:1024px){
 
-        .theme-toggle:hover {
-            transform: scale(1.1);
-        }
+.hero-wrap{
+grid-template-columns:1fr;
+gap:40px;
+}
 
-        footer {
-            text-align: center;
-            padding: 2rem 1rem;
-            background-color: var(--card-bg);
-            margin-top: 2rem;
-        }
+.grid{
+grid-template-columns:repeat(2,1fr);
+}
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .gallery {
-                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            }
+.portfolio{
+grid-template-columns:repeat(2,1fr);
+}
 
-            h1 {
-                font-size: 2rem;
-            }
+.hero{
+text-align:center;
+}
 
-            .about-container {
-                flex-direction: column;
-                text-align: center;
-            }
+.hero p{
+margin:auto;
+}
 
-            .skills {
-                justify-content: center;
-            }
-        }
-    </style>
+.buttons{
+justify-content:center;
+}
+
+}
+
+/* MOBILE */
+@media(max-width:680px){
+
+nav{
+padding:15px 5%;
+}
+
+nav ul{
+display:none;
+}
+
+.hero{
+padding:100px 5% 50px;
+}
+
+section{
+padding:70px 5%;
+}
+
+.grid{
+grid-template-columns:1fr;
+}
+
+.portfolio{
+grid-template-columns:1fr;
+}
+
+.title{
+font-size:2rem;
+}
+
+.hero p{
+font-size:1rem;
+}
+
+.btn{
+width:100%;
+text-align:center;
+}
+
+}
+</style>
 </head>
 <body>
-    <header id="inicio">
-        <h1>Portafolio de Jeon</h1>
-        <p>Diseño gráfico que comunica y emociona</p>
-        <a href="#galeria" class="cta-button">Ver portafolio</a>
-    </header>
 
-    <nav>
-        <a href="#inicio">Inicio</a>
-        <a href="#galeria">Portafolio</a>
-        <a href="#sobre-mi">Sobre mí</a>
-        <a href="#contacto">Contacto</a>
-    </nav>
+<nav>
+<div class="logo">TU MARCA</div>
+<ul>
+<li><a href="#servicios">Servicios</a></li>
+<li><a href="#portfolio">Portafolio</a></li>
+<li><a href="#contacto">Contacto</a></li>
+</ul>
+</nav>
 
-    <section id="galeria">
-        <h2 class="section-title">Mi Trabajo</h2>
-        <div class="gallery">
-            <div class="gallery-item">
-                <img src="https://source.unsplash.com/random/600x600/?logo" alt="Diseño de logo">
-            </div>
-            <div class="gallery-item">
-                <img src="https://source.unsplash.com/random/600x600/?poster" alt="Diseño de poster">
-            </div>
-            <div class="gallery-item">
-                <img src="https://source.unsplash.com/random/600x600/?illustration" alt="Ilustración digital">
-            </div>
-            <div class="gallery-item">
-                <img src="https://source.unsplash.com/random/600x600/?book" alt="Diseño editorial">
-            </div>
-            <div class="gallery-item">
-                <img src="https://source.unsplash.com/random/600x600/?branding" alt="Branding">
-            </div>
-            <div class="gallery-item">
-                <img src="https://source.unsplash.com/random/600x600/?packaging" alt="Diseño de packaging">
-            </div>
-        </div>
-    </section>
+<section class="hero">
+<div class="hero-wrap">
 
-    <section id="sobre-mi">
-        <h2 class="section-title">Sobre Mí</h2>
-        <div class="about-container">
-            <img src="https://source.unsplash.com/random/600x600/?portrait" alt="Jeon - Diseñador gráfico" class="profile-pic">
-            <div class="about-text">
-                <h3>¡Hola! Soy Jeon</h3>
-                <p>Diseñador gráfico con 5 años de experiencia creando identidades visuales impactantes. Mi enfoque combina creatividad y estrategia para desarrollar soluciones visuales que cuentan historias y conectan con las audiencias.</p>
-                <p>Especializado en branding y diseño editorial, me apasiona encontrar el equilibrio perfecto entre estética y funcionalidad.</p>
-                
-                <h4>Herramientas que domino:</h4>
-                <div class="skills">
-                    <span class="skill-tag">Photoshop</span>
-                    <span class="skill-tag">Illustrator</span>
-                    <span class="skill-tag">InDesign</span>
-                    <span class="skill-tag">Procreate</span>
-                    <span class="skill-tag">Figma</span>
-                    <span class="skill-tag">After Effects</span>
-                </div>
-            </div>
-        </div>
-    </section>
+<div>
+<h1>Diseño que <span class="gradient">impacta</span></h1>
+<p>
+Branding premium, redes sociales, identidad visual y experiencias modernas para marcas que quieren destacar.
+</p>
 
-    <section id="contacto">
-        <h2 class="section-title">Contacto</h2>
-        <form class="contact-form">
-            <div class="form-group">
-                <label for="nombre">Nombre</label>
-                <input type="text" id="nombre" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Correo electrónico</label>
-                <input type="email" id="email" required>
-            </div>
-            <div class="form-group">
-                <label for="mensaje">Mensaje</label>
-                <textarea id="mensaje" required></textarea>
-            </div>
-            <button type="submit" class="submit-btn">Enviar mensaje</button>
-        </form>
+<div class="buttons">
+<a href="#portfolio" class="btn primary">Ver trabajos</a>
+<a href="#contacto" class="btn secondary">Contratar</a>
+</div>
+</div>
 
-        <div class="social-links">
-            <a href="#" aria-label="Instagram"><i>📸</i></a>
-            <a href="#" aria-label="Behance"><i>🎨</i></a>
-            <a href="#" aria-label="WhatsApp"><i>💬</i></a>
-            <a href="#" aria-label="LinkedIn"><i>🔗</i></a>
-        </div>
-    </section>
+<div class="hero-card">
+<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200" alt="">
+</div>
 
-    <!-- Modal para imágenes -->
-    <div class="modal" id="imageModal">
-        <span class="close-modal">&times;</span>
-        <div class="modal-content">
-            <img id="expandedImage" src="" alt="">
-        </div>
-    </div>
+</div>
+</section>
 
-    <!-- Botón tema oscuro/claro -->
-    <button class="theme-toggle" id="themeToggle">🌓</button>
+<section id="servicios">
+<h2 class="title">Servicios</h2>
 
-    <footer>
-        <p>&copy; 2023 Portafolio de Jeon. Todos los derechos reservados.</p>
-    </footer>
+<div class="grid">
 
-    <script>
-        // Modal para galería
-        const galleryItems = document.querySelectorAll('.gallery-item');
-        const modal = document.getElementById('imageModal');
-        const modalImg = document.getElementById('expandedImage');
-        const closeModal = document.querySelector('.close-modal');
+<div class="card">
+<h3>Branding</h3>
+<p>Logotipos, identidad visual y estrategia de marca.</p>
+</div>
 
-        galleryItems.forEach(item => {
-            item.addEventListener('click', () => {
-                const imgSrc = item.querySelector('img').src;
-                modalImg.src = imgSrc;
-                modal.style.display = 'flex';
-            });
-        });
+<div class="card">
+<h3>Social Media</h3>
+<p>Contenido visual premium para Instagram, TikTok y campañas.</p>
+</div>
 
-        closeModal.addEventListener('click', () => {
-            modal.style.display = 'none';
-        });
+<div class="card">
+<h3>Packaging</h3>
+<p>Empaques modernos orientados a venta e impacto visual.</p>
+</div>
 
-        // Cerrar modal al hacer clic fuera
-        window.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.style.display = 'none';
-            }
-        });
+<div class="card">
+<h3>Web Design</h3>
+<p>Landing pages y diseño UI limpio y elegante.</p>
+</div>
 
-        // Tema oscuro/claro
-        const themeToggle = document.getElementById('themeToggle');
-        const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+</div>
+</section>
 
-        // Verificar preferencias del sistema
-        if (prefersDarkScheme.matches) {
-            document.body.classList.add('dark-mode');
-        }
+<section id="portfolio">
+<h2 class="title">Portafolio</h2>
 
-        themeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-            
-            // Guardar preferencia
-            const isDark = document.body.classList.contains('dark-mode');
-            localStorage.setItem('darkMode', isDark);
-        });
+<div class="portfolio">
 
-        // Cargar preferencia guardada
-        if (localStorage.getItem('darkMode') === 'true') {
-            document.body.classList.add('dark-mode');
-        }
+<div class="work">
+<img src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?w=1200">
+<div class="overlay">Proyecto Branding</div>
+</div>
 
-        // Smooth scrolling para navegación
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                window.scrollTo({
-                    top: targetElement.offsetTop - 60,
-                    behavior: 'smooth'
-                });
-            });
-        });
+<div class="work">
+<img src="https://images.unsplash.com/photo-1609921212029-bb5a28e60960?w=1200">
+<div class="overlay">Packaging</div>
+</div>
 
-        // Validación simple del formulario
-        const contactForm = document.querySelector('.contact-form');
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('¡Gracias por tu mensaje! Me pondré en contacto contigo pronto.');
-            contactForm.reset();
-        });
-    </script>
+<div class="work">
+<img src="https://images.unsplash.com/photo-1558655146-d09347e92766?w=1200">
+<div class="overlay">Redes Sociales</div>
+</div>
+
+<div class="work">
+<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200">
+<div class="overlay">UI Design</div>
+</div>
+
+<div class="work">
+<img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200">
+<div class="overlay">Editorial</div>
+</div>
+
+<div class="work">
+<img src="https://images.unsplash.com/photo-1497215842964-222b430dc094?w=1200">
+<div class="overlay">Creative Ads</div>
+</div>
+
+</div>
+</section>
+
+<section id="contacto">
+<h2 class="title">Contacto</h2>
+
+<div class="contact-box">
+<p>Email: tunombre@email.com</p>
+<p>Instagram: @tumarca</p>
+<p>Disponible para freelance y proyectos premium.</p>
+</div>
+</section>
+
+<footer>
+© 2026 Tu Nombre — Diseño Gráfico Premium
+</footer>
+
 </body>
 </html>
