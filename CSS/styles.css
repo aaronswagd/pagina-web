@@ -279,6 +279,10 @@ background:linear-gradient(90deg,var(--accent),var(--accent2));
 box-shadow:var(--shadow);
 }
 
+.contact-icons a:active{
+transform:scale(0.9);
+}
+
 /* POPUP */
 .popup{
 position:fixed;
