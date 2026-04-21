@@ -317,3 +317,16 @@ gap:10px;
 .grid{grid-template-columns:1fr 1fr;}
 .portfolio{grid-template-columns:1fr;}
 }
+
+/* MODO CLARO AUTOMÁTICO */
+@media (prefers-color-scheme: light) {
+:root{
+--bg:#f5f5f5;
+--card:#ffffff;
+--text:#0a0a0a;
+--soft:#52525b;
+--line:rgba(0,0,0,.08);
+--accent:#7c3aed;
+--accent2:#22d3ee;
+}
+}
