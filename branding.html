@@ -17,31 +17,35 @@
 <a href="index.html">← Volver</a>
 </nav>
 
-<section class="hero">
-<h1>Branding e Identidad</h1>
-<p>Diseño identidades visuales que conectan, posicionan y elevan marcas.</p>
+<section>
+  <div class="branding-hero">
+    <h1>Branding e Identidad</h1>
+    <p>Diseño identidades que conectan, posicionan y perduran.</p>
+  </div>
+
+  <div class="branding-grid">
+
+    <div class="branding-card" onclick="openBrand(0)">
+      <img src="img/brand1.jpg">
+      <div class="branding-info">
+        <h3>Golden Bangtan</h3>
+        <p>Identidad emocional</p>
+      </div>
+    </div>
+
+    <div class="branding-card" onclick="openBrand(1)">
+      <img src="img/brand2.jpg">
+      <div class="branding-info">
+        <h3>Visual Studio</h3>
+        <p>Minimalismo premium</p>
+      </div>
+    </div>
+
+  </div>
 </section>
 
-<section class="grid">
-
-<div class="card" onclick="openProject(0)">
-<img src="">
-<div class="info">
-<h3>Golden Bangtan</h3>
-<p>Identidad emocional</p>
-</div>
-</div>
-
-<div class="card" onclick="openProject(1)">
-<img src="">
-<div class="info">
-<h3>Visual Studio</h3>
-<p>Minimalismo premium</p>
-</div>
-</div>
-
-</section>
-
+<div id="brandPanel" class="brand-panel"></div>
+  
 <div id="panel" class="panel"></div>
 
 <script src="JS/branding.js"></script>
