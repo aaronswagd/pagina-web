@@ -28,6 +28,12 @@ overflow-x:hidden;
 transition: background .4s, color .4s;
 }
 
+.work{
+display:block;
+text-decoration:none;
+color:inherit;
+}
+
 /* FONDO DECORATIVO */
 body::before{
 content:"";
