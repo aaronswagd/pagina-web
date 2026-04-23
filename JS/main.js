@@ -45,10 +45,21 @@ function openEmail(e){
   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
   if(isMobile){
-    // 📱 Móvil → app de correo
+    // Móvil → app de correo
     window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   } else {
-    // 💻 Desktop → Gmail web
+    // Desktop → Gmail web
     window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`, "_blank");
   }
+}
+
+// Abrir galería de fotografía
+function openGallery(){
+  const section = document.getElementById("fotografia");
+
+  section.classList.remove("hidden");
+
+  section.scrollIntoView({
+    behavior: "smooth"
+  });
 }
